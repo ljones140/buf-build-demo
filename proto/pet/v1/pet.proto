@@ -15,7 +15,6 @@ enum PetType {
 message Pet {
   PetType pet_type = 1;
   string pet_id = 2;
-  string name = 3;
 }
 
 message GetPetRequest {

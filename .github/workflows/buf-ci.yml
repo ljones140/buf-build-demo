@@ -20,6 +20,8 @@ jobs:
 
       - name: Generate proto code
         run: buf generate --error-format github-actions
+
+      - name: Commit code change
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Generate code from protos

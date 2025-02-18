@@ -11,11 +11,26 @@ permissions:
 jobs:
   buf:
     runs-on: ubuntu-latest
+    # steps:
+    #   - uses: actions/checkout@v4
+    #   - uses: bufbuild/buf-action@v1
+    #   - run: buf generate --error-format github-actions
+    #   - uses: stefanzweifel/git-auto-commit-action@v5
+    #     with:
+    #       commit_message: Generate code from protos
+    #       commit_author: ${{ steps.last-commit.outputs.author }}
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Buf action
       - uses: bufbuild/buf-action@v1
+
+      - name: Generate proto code
       - run: buf generate --error-format github-actions
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Generate code from protos
           commit_author: ${{ steps.last-commit.outputs.author }}
+

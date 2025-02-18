@@ -17,13 +17,4 @@ jobs:
         with:
           setup_only: true
       - run: buf generate --error-format github-actions
-      - name: Commit changes
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add .
-          git commit -m "Auto-build from proto files"
-          git push origin "HEAD:${GITHUB_REF}"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: stefanzweifel/git-auto-commit-action@v5

@@ -18,3 +18,6 @@ jobs:
           setup_only: true
       - run: buf generate --error-format github-actions
       - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Generate code from protos
+          commit_author: ${{ steps.last-commit.outputs.author }}

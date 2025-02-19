@@ -8,7 +8,7 @@ import (
 	connect "connectrpc.com/connect"
 	context "context"
 	errors "errors"
-	v1 "github.com/bufbuild/buf-tour/gen/pet/v1"
+	v1 "github.com/buf-build-demo/pet/v1"
 	http "net/http"
 	strings "strings"
 )

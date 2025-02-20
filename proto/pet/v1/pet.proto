@@ -16,7 +16,7 @@ message Pet {
   PetType pet_type = 1;
   string pet_id = 2;
   string name = 3;
-  string colour = 4;
+  string favourite_food = 5;
 }
 
 message GetPetRequest {
@@ -37,7 +37,7 @@ message PutPetResponse {
 }
 
 message DeletePetRequest {
-  string pet_id = 1;
+  string petID = 1;
 }
 
 message DeletePetResponse {}

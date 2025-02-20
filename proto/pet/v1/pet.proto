@@ -17,6 +17,7 @@ message Pet {
   string pet_id = 2;
   string name = 3;
   string colour = 4;
+  string favourite_food = 5;
 }
 
 message GetPetRequest {

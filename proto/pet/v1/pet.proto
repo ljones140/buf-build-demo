@@ -19,7 +19,6 @@ message Pet {
   string favorite_food = 4;
 }
 
-
 message GetPetRequest {
   string pet_id = 1;
 }
@@ -38,7 +37,7 @@ message PutPetResponse {
 }
 
 message DeletePetRequest {
-  string petID = 1;
+  string pet_id = 1;
 }
 
 message DeletePetResponse {}
